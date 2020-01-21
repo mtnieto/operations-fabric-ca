@@ -1,0 +1,23 @@
+version: '2'
+
+services:
+ orderer1-org0:
+  container_name: orderer1-org0
+  image: hyperledger/fabric-orderer
+  environment:
+    - ORDERER_HOME=/tmp/hyperledger/orderer
+    - ORDERER_HOST=orderer1-org0
+    - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
+    - ORDERER_GENERAL_GENESISMETHOD=file
+    - ORDERER_GENERAL_GENESISFILE=/tmp/hyperledger/genesis/genesis.block
+    - ORDERER_GENERAL_LOCALMSPID=org0MSP
+    - ORDERER_GENERAL_LOCALMSPDIR=/tmp/hyperledger/org0/orderer/msp
+    - ORDERER_GENERAL_TLS_ENABLED=true
+    - ORDERER_GENERAL_TLS_CERTIFICATE=/tmp/hyperledger/org0/orderer/tls-msp/signcerts/cert.pem
+    - ORDERER_GENERAL_TLS_PRIVATEKEY=/tmp/hyperledger/org0/orderer/tls-msp/keystore/key.pem
+    - ORDERER_GENERAL_TLS_ROOTCAS=[/tmp/hyperledger/org0/orderer/tls-msp/tlscacerts/tls-0-0-0-0-7052.pem]
+    - ORDERER_GENERAL_LOGLEVEL=debug
+    - ORDERER_DEBUG_BROADCASTTRACEDIR=data/logs
+  volumes:
+    - ./org0/orderer:/tmp/hyperledger/org0/orderer/
+    - ./channel-artifacts:/tmp/hyperledger/genesis
