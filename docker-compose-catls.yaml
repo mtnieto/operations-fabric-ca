@@ -15,4 +15,20 @@ services:
       - ./tlsca:/tmp/hyperledger/fabric-ca
     ports:
       - 7052:7052
+  ca-tls-ord:
+    container_name: ca-tls-ord
+    image: hyperledger/fabric-ca
+    command: sh -c 'fabric-ca-server start -d -b tls-ca-admin:tls-ca-adminpw --port 8052'
+    environment:
+      - FABRIC_CA_SERVER_HOME=/tmp/hyperledger/fabric-ca/crypto
+      - FABRIC_CA_SERVER_TLS_ENABLED=true
+      - FABRIC_CA_SERVER_CSR_CN=ca-tls-ord
+      - FABRIC_CA_SERVER_CSR_HOSTS=0.0.0.0
+      - FABRIC_CA_SERVER_DEBUG=true
+    volumes:
+      - ./tlsca2:/tmp/hyperledger/fabric-ca
+    ports:
+      - 8052:8052
+
+
 

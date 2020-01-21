@@ -15,12 +15,12 @@ services:
     - ORDERER_GENERAL_TLS_ENABLED=true
     - ORDERER_GENERAL_TLS_CERTIFICATE=/tmp/hyperledger/org0/orderer/tls-msp/signcerts/cert.pem
     - ORDERER_GENERAL_TLS_PRIVATEKEY=/tmp/hyperledger/org0/orderer/tls-msp/keystore/key.pem
-    - ORDERER_GENERAL_TLS_ROOTCAS=[/tmp/hyperledger/org0/orderer/tls-msp/tlscacerts/tls-0-0-0-0-7052.pem]
+    - ORDERER_GENERAL_TLS_ROOTCAS=[/tmp/hyperledger/org0/orderer/tls-msp/tlscacerts/tls-0-0-0-0-8052.pem]
     - ORDERER_GENERAL_LOGLEVEL=debug
     - ORDERER_DEBUG_BROADCASTTRACEDIR=data/logs
     - ORDERER_GENERAL_CLUSTER_CLIENTCERTIFICATE=/tmp/hyperledger/org0/orderer/tls-msp/signcerts/cert.pem
     - ORDERER_GENERAL_CLUSTER_CLIENTPRIVATEKEY=/tmp/hyperledger/org0/orderer/tls-msp/keystore/key.pem
-    - ORDERER_GENERAL_CLUSTER_ROOTCAS=[/tmp/hyperledger/org0/orderer/tls-msp/tlscacerts/tls-0-0-0-0-7052.pem]
+    - ORDERER_GENERAL_CLUSTER_ROOTCAS=[/tmp/hyperledger/org0/orderer/tls-msp/tlscacerts/tls-0-0-0-0-8052.pem]
   volumes:
     - ./org0/orderer:/tmp/hyperledger/org0/orderer/
     - ./channel-artifacts:/tmp/hyperledger/genesis
