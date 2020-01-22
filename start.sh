@@ -16,7 +16,7 @@ sh 08-generateMSP.sh
 sleep 5
 sh 09-generateChannel.sh
 
-# docker-compose -f docker-compose-peer.yaml up -d 
-# docker-compose -f docker-compose-peer-ord.yaml up -d
-# docker-compose -f docker-compose-cli.yaml up -d
+docker-compose -f docker-compose-peer.yaml up -d 
+docker-compose -f docker-compose-peer-ord.yaml up -d
+docker-compose -f docker-compose-cli.yaml up -d
 

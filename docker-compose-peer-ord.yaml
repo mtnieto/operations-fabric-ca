@@ -2,11 +2,11 @@ version: '2'
 
 services:
  orderer-org0:
-  container_name: orderer1-org0
+  container_name: orderer-org0
   image: hyperledger/fabric-orderer
   environment:
     - ORDERER_HOME=/tmp/hyperledger/orderer
-    - ORDERER_HOST=orderer1-org0
+    - ORDERER_HOST=orderer-org0
     - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
     - ORDERER_GENERAL_GENESISMETHOD=file
     - ORDERER_GENERAL_GENESISFILE=/tmp/hyperledger/genesis/genesis.block
